@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Kuruma</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top"
+      id="barNav"
+    ></nav>
+    <main class="bg-light min-vh-100 d-flex justify-content-center align-items-center">
+      <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+        <form class="formRegistro p-4 shadow bg-white rounded my-4">
+          <h1 class="text-center mb-4">Registro</h1>
+
+          <div class="mb-3">
+            <label for="formRegistroNombre" class="form-label">Nombre</label>
+            <input
+              type="text"
+              name="formRegistroCorreo"
+              id="formRegistroCorreo"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formRegistroApp" class="form-label">Apellido Paterno</label>
+            <input
+              type="text"
+              name="formRegistroApp"
+              id="formRegistroApp"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formRegistroApp" class="form-label">Apellido Materno</label>
+            <input
+              type="text"
+              name="formRegistroApp"
+              id="formRegistroApp"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="formRegistroCorreo" class="form-label">Correo Electrónico</label>
+            <input
+              type="email"
+              name="formRegistroCorreo"
+              id="formRegistroCorreo"
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formRegistroTel" class="form-label">Telefono</label>
+            <input
+              type="tel"
+              name="formRegistroTel"
+              id="formRegistroTel"
+              class="form-control"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="formRegistroPassword" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              name="formRegistroPassword"
+              id="formRegistroPassword"
+              class="form-control"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="formRegistroPassword2" class="form-label">Confirmar Contraseña</label>
+            <input
+              type="password"
+              name="formRegistroPassword2"
+              id="formRegistroPassword2"
+              class="form-control"
+            />
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-purple rounded-pill">Registrarse</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/barNav.js"></script>
+  </body>
+</html>

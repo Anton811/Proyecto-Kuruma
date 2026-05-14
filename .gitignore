@@ -1,24 +1,14 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Dependencias (NUNCA se suben, son muy pesadas)
+node_modules/
 
-node_modules
-dist
-dist-ssr
-*.local
+# Archivos de configuración local y secretos
+.env
+.env.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Carpetas de compilación (dist o build)
+dist/
+build/
+
+# Archivos del sistema
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db

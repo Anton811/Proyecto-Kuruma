@@ -1,19 +1,22 @@
-.fondo-img {
-  background-image: url("/public/Kuruma-DashboardFondo.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  height: 100vh; /* Puedes ajustar la altura según prefieras */
-}
-
 #main {
   position: relative;
-  z-index: 10;
-  margin-top: -50%; /* Opcional: para que monte un poco sobre la imagen */
-  border-radius: 30px 30px 0 0;
+  top: 500px;
+}
+.btn-purple {
+  background-color: blueviolet;
+  color: white;
+}
+.btn-purple:hover {
+  background-color: darkorchid;
+  color: white;
+}
+.bg-purple {
+  background-color: blueviolet;
+}
+#hero {
+  top: -500 px;
 }
 
-.btn-purple {
-  background-color: #6f42c1;
-  color: white;
+.text-pre-line {
+  white-space: pre-line;
 }

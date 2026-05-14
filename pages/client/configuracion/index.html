@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Kuruma</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top"
+      id="barNav"
+    ></nav>
+    <main class="bg-light">
+      <div class="row">
+        <div
+          id="barClient"
+          class="col-3 border border-secondary px-0 min-vh-100 d-flex justify-content-center align-items-center"
+        ></div>
+        <div class="col-9">
+          <div><h1>Configuracion</h1></div>
+          <div class="container bg-white">
+            <form id="formModificarCliente">
+              <label for="formModificarClienteNombre">Nombre(s)</label>
+              <input
+                type="text"
+                name="formModificarClienteNombre"
+                id="formModificarClienteNombre"
+                class="form-control"
+              />
+              <label for="formModificarClienteApp">Apellido Paterno</label>
+              <input
+                type="text"
+                name="formModificarClienteApp"
+                id="formModificarClienteApp"
+                class="form-control"
+              />
+              <label for="formModificarClienteApm">Apellido Materno</label>
+              <input
+                type="text"
+                name="formModificarClienteApm"
+                id="formModificarClienteApm"
+                class="form-control"
+              />
+              <label for="formModificarClienteTel">Telefono</label>
+              <input
+                type="tel"
+                name="formModificarClienteTel"
+                id="formModificarClienteTel"
+                class="form-control"
+              />
+              <label for="formModificarClienteCorreo">Nombre(s)</label>
+              <input
+                type="email"
+                name="formModificarClienteCorreo"
+                id="formModificarClienteCorreo"
+                class="form-control"
+              />
+              <label for="formModificarClienteNombre">Nombre(s)</label>
+              <input
+                type="text"
+                name="formModificarClienteNombre"
+                id="formModificarClienteNombre"
+                class="form-control"
+              />
+
+              <div><input type="submit" value="Guardar cambios" class="btn btn-purple" /></div>
+            </form>
+          </div>
+          <!-- Agregar Modal para cambio de contraseña -->
+          <!-- Agregar plantilla para pagos -->
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/barNav.js"></script>
+    <script type="module" src="/src/barClient.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Kuruma</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top"
+      id="barNav"
+    ></nav>
+    <main class="bg-light">
+      <div class="row">
+        <div
+          id="barAdmin"
+          class="col-3 border border-secondary px-0 min-vh-100 d-flex justify-content-center align-items-center"
+        ></div>
+        <div class="col-9">
+          <div><h1>Reporte de venta</h1></div>
+          <div class="container">
+            <div class="bg-white rounded-3 p-3">
+              <div class="d-flex">
+                <div>
+                  <p>Fecha Inicial</p>
+                  <p>Fecha</p>
+                </div>
+                <div>
+                  <p>Fecha Final</p>
+                  <p>fecha</p>
+                </div>
+                <div>
+                  <p>Vendedor</p>
+                  <p>vendedor</p>
+                </div>
+              </div>
+              <div>
+                <h2>Movimientos</h2>
+              </div>
+              <div class="container">
+                <table class="table">
+                  <thead>
+                    <th>Folio</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                  </thead>
+                  <tbody id="tableMovimientos"></tbody>
+                </table>
+              </div>
+              <div>
+                <h2>Cancelaciones</h2>
+              </div>
+              <div class="container">
+                <table class="table">
+                  <thead>
+                    <th>Folio</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                  </thead>
+                  <tbody id="tableCancelaciones"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/barNav.js"></script>
+    <script type="module" src="/src/barAdmin.js"></script>
+  </body>
+</html>
