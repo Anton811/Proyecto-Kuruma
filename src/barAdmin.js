@@ -2,7 +2,7 @@ document.getElementById("barAdmin").innerHTML = `
 <ul class="nav flex-colum nav-tabs">
             <li class="panel nav-item w-100">
               <div class="d-flex justify-content-center rounded-3">
-                <h2>Vendedor Anonimo</h2>
+                <h2 class="text-center">Administrador Anonimo</h2>
               </div>
             </li>
             <li class="panel nav-item w-100">
@@ -27,7 +27,14 @@ document.getElementById("barAdmin").innerHTML = `
             </li>
             <li class="nav-item w-100">
               <div class="my-3 d-flex justify-content-center">
-                <button class="btn btn-purple">Cerrar sesion</button>
+                <button id="logout" class="btn btn-purple">Cerrar sesion</button>
               </div>
             </li>
           </ul>`;
+
+$("document").ready(() => {
+  $("#logout").click(() => {
+    localStorage.removeItem("token");
+    window.location.href = "/index.html";
+  });
+});

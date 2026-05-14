@@ -25,7 +25,13 @@
           <div><h1>Usuarios</h1></div>
           <div>
             <input type="search" name="buscarUsuario" id="buscarUsuario" />
-            <button class="btn btn-purple">Agregar +</button>
+            <button
+              class="btn btn-purple"
+              data-bs-toggle="modal"
+              data-bs-target="#modalUsuario"
+            >
+              Agregar +
+            </button>
           </div>
           <div class="container">
             <table class="table">
@@ -42,6 +48,79 @@
       </div>
     </main>
 
+    <div class="fade modal" id="modalUsuario">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Crear usuario</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <form id="formAgregarUsuario">
+            <div class="modal-body">
+              <label for="formAgregarUsuarioNombre">Nombre</label
+              ><input
+                type="text"
+                name="formAgregarUsuarioNombre"
+                id="formAgregarUsuarioNombre"
+                class="form-control"
+                required
+              />
+              <label for="formAgregarUsuarioApp">Apellido Paterno</label>
+              <input
+                type="text"
+                name="formAgregarUsuarioApp"
+                id="formAgregarUsuarioApp"
+                class="form-control"
+                required
+              />
+              <label for="formAgregarUsuarioApm">Apellido Paterno</label>
+              <input
+                type="text"
+                name="formAgregarUsuarioApm"
+                id="formAgregarUsuarioApm"
+                class="form-control"
+              />
+              <label for="formAgregarUsuarioRol">Permiso</label>
+              <select
+                name="formAgregarUsuarioRol"
+                id="formAgregarUsuarioRol"
+                class="form-select"
+              ></select>
+              <label for="formAgregarUsuarioCorreo">Correo</label>
+              <input
+                type="email"
+                name="formAgregarUsuarioCorreo"
+                id="formAgregarUsuarioCorreo"
+                class="form-control"
+              />
+              <label for="formAgregarUsuarioTel">Telefono</label>
+              <input
+                type="tel"
+                name="formAgregarUsuarioTel"
+                id="formAgregarUsuarioTel"
+                class="form-control"
+              />
+              <label for="formAgregarUsuarioPassword">Contraseña</label>
+              <input
+                type="password"
+                name="formAgregarUsuarioPassword"
+                id="formAgregarUsuarioPassword"
+                class="form-control"
+              />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-purple">Crear</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-4.0.0.js"
@@ -50,5 +129,6 @@
     ></script>
     <script type="module" src="/src/barNav.js"></script>
     <script type="module" src="/src/barAdmin.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
