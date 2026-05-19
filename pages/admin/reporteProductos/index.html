@@ -25,20 +25,24 @@
           <div><h1>Reporte de Productos</h1></div>
           <div class="container">
             <div class="bg-white rounded-3 p-3">
-              <div class="d-flex">
+              <div class="d-flex align-items-end gap-3 mb-3">
                 <div>
-                  <p>Fecha Inicial</p>
-                  <p>Fecha</p>
+                  <p class="mb-1">Fecha Inicial</p>
+                  <input type="date" id="fechaInicial" class="form-control" />
                 </div>
                 <div>
-                  <p>Fecha Final</p>
-                  <p>fecha</p>
+                  <p class="mb-1">Fecha Final</p>
+                  <input type="date" id="fechaFinal" class="form-control" />
                 </div>
                 <div>
-                  <p>Vendedor</p>
-                  <p>vendedor</p>
+                  <p class="mb-1">Vendedor</p>
+                  <select id="selectVendedor" class="form-select"></select>
+                </div>
+                <div>
+                  <button class="btn btn-purple" id="btnFiltrar">Filtrar</button>
                 </div>
               </div>
+
               <div class="container">
                 <table class="table">
                   <thead>
@@ -63,5 +67,6 @@
     ></script>
     <script type="module" src="/src/barNav.js"></script>
     <script type="module" src="/src/barAdmin.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

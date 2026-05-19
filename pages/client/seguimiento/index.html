@@ -25,18 +25,18 @@
           <div><h1>Seguimiento de Compra</h1></div>
           <div class="container">
             <div class="bg-white rounded-3 p-3">
-              <h2>Kuruma Sports Red Viper</h2>
+              <h2 id="nombreAuto"></h2>
               <div class="d-flex justify-content-around">
-                <p>folio:</p>
-                <p>fecha:</p>
+                <p id="folio"></p>
+                <p id="fecha"></p>
               </div>
               <div class="container">
                 <div class="progress" style="height: 40px">
-                  <div class="progress-bar bg-purple" style="width: 40%"></div>
+                  <div class="progress-bar bg-purple" style="width: 0%"></div>
                 </div>
-                <div><p>Estatus:</p></div>
-                <div><p>Descripcion:</p></div>
-                <div><p>Fecha estimada de entrega</p></div>
+                <div><p id="estatus"></p></div>
+                <div><p id="descripcion"></p></div>
+                <div><p id="fechaEntrega"></p></div>
                 <div class="clearfix">
                   <button class="btn btn-danger float-end">Cancelar compra</button>
                 </div>
@@ -55,5 +55,6 @@
     ></script>
     <script type="module" src="/src/barNav.js"></script>
     <script type="module" src="/src/barClient.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

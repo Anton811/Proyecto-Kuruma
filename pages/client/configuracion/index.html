@@ -30,49 +30,151 @@
                 type="text"
                 name="formModificarClienteNombre"
                 id="formModificarClienteNombre"
-                class="form-control"
+                class="form-control w-50"
               />
-              <label for="formModificarClienteApp">Apellido Paterno</label>
-              <input
-                type="text"
-                name="formModificarClienteApp"
-                id="formModificarClienteApp"
-                class="form-control"
-              />
-              <label for="formModificarClienteApm">Apellido Materno</label>
-              <input
-                type="text"
-                name="formModificarClienteApm"
-                id="formModificarClienteApm"
-                class="form-control"
-              />
-              <label for="formModificarClienteTel">Telefono</label>
-              <input
-                type="tel"
-                name="formModificarClienteTel"
-                id="formModificarClienteTel"
-                class="form-control"
-              />
-              <label for="formModificarClienteCorreo">Nombre(s)</label>
-              <input
-                type="email"
-                name="formModificarClienteCorreo"
-                id="formModificarClienteCorreo"
-                class="form-control"
-              />
-              <label for="formModificarClienteNombre">Nombre(s)</label>
-              <input
-                type="text"
-                name="formModificarClienteNombre"
-                id="formModificarClienteNombre"
-                class="form-control"
-              />
+              <div class="row">
+                <div class="col">
+                  <label for="formModificarClienteApp">Apellido Paterno</label>
+                  <input
+                    type="text"
+                    name="formModificarClienteApp"
+                    id="formModificarClienteApp"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="formModificarClienteApm">Apellido Materno</label>
+                  <input
+                    type="text"
+                    name="formModificarClienteApm"
+                    id="formModificarClienteApm"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="formModificarClienteTel">Telefono</label>
+                  <input
+                    type="tel"
+                    name="formModificarClienteTel"
+                    id="formModificarClienteTel"
+                    class="form-control"
+                    disabled
+                  />
+                </div>
+                <div class="col">
+                  <label for="formModificarClienteCorreo">Correo Electronico</label>
+                  <input
+                    type="email"
+                    name="formModificarClienteCorreo"
+                    id="formModificarClienteCorreo"
+                    class="form-control"
+                    disabled
+                  />
+                </div>
+              </div>
 
               <div><input type="submit" value="Guardar cambios" class="btn btn-purple" /></div>
             </form>
           </div>
+
+          <div>
+            <h2>Metodo de Pago</h2>
+            <div>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#modalTarjeta"
+                class="btn btn-success"
+              >
+                Agregar Pago
+              </button>
+            </div>
+          </div>
+          <div class="container bg-white p-3 rounded" id="seccionPagos">
+            <div class="row border rounded border-light p-3">
+              <div class="col-9 m-2">
+                <h3>•••• 1234</h3>
+                <h6 class="text-secondary">08/29</h6>
+              </div>
+              <div class="col d-flex justify-content-center align-items-center">
+                <button class="btn btn-danger">Eliminar</button>
+              </div>
+            </div>
+          </div>
           <!-- Agregar Modal para cambio de contraseña -->
           <!-- Agregar plantilla para pagos -->
+          <div class="fade modal" id="modalTarjeta" aria-hidden="true" style="display: none">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Agregar nueva tarjeta</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="formAgregarTarjeta">
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <label for="formAgregarTarjetaNombre" class="form-label"
+                      >Nombre del titular</label
+                    >
+                    <input
+                      type="text"
+                      name="formAgregarTarjetaNombre"
+                      id="formAgregarTarjetaNombre"
+                      class="form-control"
+                    />
+                    <label for="formAgregarTarjetaNumero" class="form-label"
+                      >Numero de la tarjeta</label
+                    >
+                    <input
+                      type="text"
+                      name="formAgregarTarjetaNumero"
+                      id="formAgregarTarjetaNumero"
+                      class="form-control"
+                    />
+                    <label for="formAgregarTarjetaMes" class="form-label"
+                      >Mes de Vencimiento</label
+                    >
+                    <input
+                      type="text"
+                      name="formAgregarTarjetaMes"
+                      id="formAgregarTarjetaMes"
+                      class="form-control"
+                    />
+                    <label for="formAgregarTarjetaAnio" class="form-label"
+                      >Mes de Vencimiento</label
+                    >
+                    <input
+                      type="text"
+                      name="formAgregarTarjetaAnio"
+                      id="formAgregarTarjetaAnio"
+                      class="form-control"
+                    />
+                    <label for="formAgregarTarjetaCVV" class="form-label">CVV</label>
+                    <input
+                      type="text"
+                      name="formAgregarTarjetaCVV"
+                      id="formAgregarTarjetaCVV"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <input
+                      type="submit"
+                      value="+ Agregar Tarjeta"
+                      class="btn btn-success fw-bold"
+                    />
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -85,5 +187,6 @@
     ></script>
     <script type="module" src="/src/barNav.js"></script>
     <script type="module" src="/src/barClient.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

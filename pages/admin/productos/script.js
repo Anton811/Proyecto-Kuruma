@@ -23,7 +23,6 @@ $("document").ready(() => {
   $("#tableProductos").on("click", ".btn-Eliminar", async function () {
     const id = $(this).data("id");
 
-    // Confirmación nativa del navegador
     if (
       confirm(
         "¿Estás seguro de que deseas eliminar este auto? Esta acción no se puede deshacer.",
@@ -38,7 +37,7 @@ $("document").ready(() => {
 
         if (response.ok) {
           alert(data.message);
-          cargarAutos(); // Recargamos la tabla para que desaparezca el registro
+          cargarAutos();
         } else {
           alert("Error al eliminar: " + data.message);
         }
@@ -48,14 +47,10 @@ $("document").ready(() => {
     }
   });
 
-  // Coloca esto dentro de $(document).ready
   $("#formModificarAuto").submit(async (e) => {
     e.preventDefault();
 
-    // 1. Obtener el ID del input oculto que llenamos al abrir el modal
     const id = $("#formModificarAutoId").val();
-
-    // 2. Recolectar los datos del formulario del modal
     const autoEditado = {
       nombre: $("#formModificarAutoNombre").val(),
       carroceria: $("#formModificarAutoCarroceria").val(),

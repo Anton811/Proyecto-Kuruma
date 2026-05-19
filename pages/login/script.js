@@ -15,7 +15,6 @@ $("#formLogin").submit(async (e) => {
   }
   const usuario = data.body;
   localStorage.setItem("token", data.token);
-  alert(data.message);
   if (usuario.idRol == 1) window.location.href = "/pages/client/seguimiento/index.html";
   if (usuario.idRol == 2) window.location.href = "/pages/seller/seguimiento/index.html";
   if (usuario.idRol == 3) window.location.href = "/pages/admin/reporteProductos/index.html";

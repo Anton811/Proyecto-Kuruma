@@ -17,7 +17,14 @@ document.getElementById("barSeller").innerHTML = `
             </li>
             <li class="nav-item w-100">
               <div class="my-3 d-flex justify-content-center">
-                <button class="btn btn-purple">Cerrar sesion</button>
+                <button id="logout" class="btn btn-purple">Cerrar sesion</button>
               </div>
             </li>
           </ul>`;
+
+$("document").ready(() => {
+  $("#logout").click(() => {
+    localStorage.removeItem("token");
+    window.location.href = "/index.html";
+  });
+});

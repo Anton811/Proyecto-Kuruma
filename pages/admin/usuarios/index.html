@@ -28,7 +28,7 @@
             <button
               class="btn btn-purple"
               data-bs-toggle="modal"
-              data-bs-target="#modalUsuario"
+              data-bs-target="#modalAgregarUsuario"
             >
               Agregar +
             </button>
@@ -48,7 +48,8 @@
       </div>
     </main>
 
-    <div class="fade modal" id="modalUsuario">
+    <!-- Modal para agregar Usuario -->
+    <div class="fade modal" id="modalAgregarUsuario">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -73,7 +74,7 @@
                 class="form-control"
                 required
               />
-              <label for="formAgregarUsuarioApm">Apellido Paterno</label>
+              <label for="formAgregarUsuarioApm">Apellido Materno</label>
               <input
                 type="text"
                 name="formAgregarUsuarioApm"
@@ -112,6 +113,87 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="submit" class="btn btn-purple">Crear</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para modificar Usuario -->
+    <div class="fade modal" id="modalModificarUsuario">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Crear usuario</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <form id="formModificarUsuario">
+            <div class="modal-body">
+              <input
+                type="hidden"
+                name="formModificarUsuarioId"
+                id="formModificarUsuarioId"
+                class="form-control"
+                required
+              />
+              <label for="formModificarUsuarioNombre">Nombre</label
+              ><input
+                type="text"
+                name="formModificarUsuarioNombre"
+                id="formModificarUsuarioNombre"
+                class="form-control"
+                required
+              />
+              <label for="formModificarUsuarioApp">Apellido Paterno</label>
+              <input
+                type="text"
+                name="formModificarUsuarioApp"
+                id="formModificarUsuarioApp"
+                class="form-control"
+                required
+              />
+              <label for="formModificarUsuarioApm">Apellido Materno</label>
+              <input
+                type="text"
+                name="formModificarUsuarioApm"
+                id="formModificarUsuarioApm"
+                class="form-control"
+              />
+              <label for="formModificarUsuarioRol">Permiso</label>
+              <select
+                name="formModificarUsuarioRol"
+                id="formModificarUsuarioRol"
+                class="form-select"
+              ></select>
+              <label for="formModificarUsuarioCorreo">Correo</label>
+              <input
+                type="email"
+                name="formModificarUsuarioCorreo"
+                id="formModificarUsuarioCorreo"
+                class="form-control"
+              />
+              <label for="formModificarUsuarioTel">Telefono</label>
+              <input
+                type="tel"
+                name="formModificarUsuarioTel"
+                id="formModificarUsuarioTel"
+                class="form-control"
+              />
+              <label for="formModificarUsuarioPassword">Contraseña</label>
+              <input
+                type="password"
+                name="formModificarUsuarioPassword"
+                id="formModificarUsuarioPassword"
+                class="form-control"
+              />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-purple">Modificar</button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
                 Cerrar
               </button>

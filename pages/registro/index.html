@@ -17,15 +17,15 @@
     ></nav>
     <main class="bg-light min-vh-100 d-flex justify-content-center align-items-center">
       <div class="col-11 col-sm-8 col-md-6 col-lg-4">
-        <form class="formRegistro p-4 shadow bg-white rounded my-4">
+        <form id="formRegistro" class="p-4 shadow bg-white rounded my-4">
           <h1 class="text-center mb-4">Registro</h1>
 
           <div class="mb-3">
             <label for="formRegistroNombre" class="form-label">Nombre</label>
             <input
               type="text"
-              name="formRegistroCorreo"
-              id="formRegistroCorreo"
+              name="formRegistroNombre"
+              id="formRegistroNombre"
               class="form-control"
               required
             />
@@ -41,13 +41,12 @@
             />
           </div>
           <div class="mb-3">
-            <label for="formRegistroApp" class="form-label">Apellido Materno</label>
+            <label for="formRegistroApm" class="form-label">Apellido Materno</label>
             <input
               type="text"
-              name="formRegistroApp"
-              id="formRegistroApp"
+              name="formRegistroApm"
+              id="formRegistroApm"
               class="form-control"
-              required
             />
           </div>
 
@@ -104,5 +103,6 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="/src/barNav.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
