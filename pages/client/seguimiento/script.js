@@ -5,8 +5,6 @@ if (token) {
   user = JSON.parse(atob(token.split(".")[1]));
 }
 
-// Estatus 1-5 son el flujo normal de compra (para la barra de progreso)
-// 6 = Entregado, 7 = Cancelado, 8 = Rechazado, 9 = Pendiente
 const estatusConfig = {
   1: { progreso: 20, color: "bg-purple" },
   2: { progreso: 40, color: "bg-purple" },
@@ -25,17 +23,14 @@ $(document).ready(() => {
 
 async function cargarPedido() {
   try {
-    // 1. Traer todos los pedidos
     const dataPedidos = await fetch("http://localhost:3000/api/pedido/cargarPedidos").then(
       (e) => e.json(),
     );
+    console.log(dataPedidos);
     const pedidos = dataPedidos.body;
 
-    // 2. Buscar el pedido activo del cliente
-    const pedido = pedidos.find(
-      (p) => p.idCliente === user.id && p.idEstatus < 7, // Excluye cancelado y rechazado
-    );
-
+    const pedido = pedidos.find((p) => p.idCliente === user.id && p.idEstatus < 7);
+    console.log(pedido);
     if (!pedido) {
       $("#nombreAuto").text("Sin pedido activo");
       $("#folio").text("N/A");
@@ -46,19 +41,16 @@ async function cargarPedido() {
       return;
     }
 
-    // 3. Traer info del auto
     const dataAuto = await fetch(`http://localhost:3000/api/auto/${pedido.idAuto}`).then((e) =>
       e.json(),
     );
     const auto = dataAuto.body;
 
-    // 4. Traer info del estatus
     const dataEstatus = await fetch(
       `http://localhost:3000/api/pedido/cargarEstatus/${pedido.idEstatus}`,
     ).then((e) => e.json());
     const estatus = dataEstatus.body;
 
-    // 5. Actualizar UI
     $("#nombreAuto").text(auto.nombreAuto);
     $("#folio").text(`Folio: #${pedido.idPedido}`);
     $("#fecha").text(`Fecha: ${pedido.fechaInicioPedido.slice(0, 10)}`);
@@ -68,14 +60,12 @@ async function cargarPedido() {
       `Fecha estimada de entrega: ${pedido.fechaFinalPedido.slice(0, 10)}`,
     );
 
-    // 6. Actualizar barra de progreso
     const config = estatusConfig[pedido.idEstatus];
     $(".progress-bar")
       .css("width", `${config.progreso}%`)
       .removeClass("bg-purple bg-success bg-danger bg-warning")
       .addClass(config.color);
 
-    // 7. Mostrar u ocultar botón cancelar (no mostrar si ya está entregado, cancelado o rechazado)
     if (pedido.idEstatus >= 6) {
       $(".btn-danger").hide();
     } else {
@@ -93,7 +83,7 @@ async function cancelarPedido(idPedido) {
   const data = await fetch(`http://localhost:3000/api/pedido/actualizarEstatus/${idPedido}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ idEstatus: 7 }), // 7 = Cancelado
+    body: JSON.stringify({ idEstatus: 7 }),
   }).then((e) => e.json());
 
   console.log(data.message);

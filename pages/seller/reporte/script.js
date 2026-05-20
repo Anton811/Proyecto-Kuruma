@@ -16,16 +16,13 @@ async function cargarReporte() {
     const fechaInicial = $("#fechaInicial").val();
     const fechaFinal = $("#fechaFinal").val();
 
-    // 1. Traer todos los pedidos
     const dataPedidos = await fetch("http://localhost:3000/api/pedido/cargarPedidos").then(
       (e) => e.json(),
     );
     const pedidos = dataPedidos.body;
 
-    // 2. Filtrar pedidos del vendedor
     let pedidosVendedor = pedidos.filter((p) => p.idVendedor === user.id);
 
-    // 3. Filtrar por rango de fechas si se seleccionaron
     if (fechaInicial && fechaFinal) {
       pedidosVendedor = pedidosVendedor.filter((p) => {
         const fechaPedido = p.fechaInicioPedido.slice(0, 10);
@@ -33,16 +30,13 @@ async function cargarReporte() {
       });
     }
 
-    // 4. Separar movimientos y cancelaciones
     const movimientos = pedidosVendedor.filter((p) => p.idEstatus !== 7 && p.idEstatus !== 8);
     const cancelaciones = pedidosVendedor.filter(
       (p) => p.idEstatus === 7 || p.idEstatus === 8,
     );
 
-    // 5. Llenar tabla movimientos
     await llenarTabla("#tableMovimientos", movimientos);
 
-    // 6. Llenar tabla cancelaciones
     await llenarTabla("#tableCancelaciones", cancelaciones);
   } catch (error) {
     console.error("Error al cargar el reporte:", error);

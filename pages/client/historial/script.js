@@ -11,13 +11,11 @@ $(document).ready(() => {
 
 async function cargarHistorial() {
   try {
-    // 1. Traer todos los pedidos
     const dataPedidos = await fetch("http://localhost:3000/api/pedido/cargarPedidos").then(
       (e) => e.json(),
     );
     const pedidos = dataPedidos.body;
 
-    // 2. Filtrar los pedidos del cliente
     const pedidosCliente = pedidos.filter((p) => p.idCliente === user.id);
 
     if (pedidosCliente.length === 0) {
@@ -27,17 +25,14 @@ async function cargarHistorial() {
       return;
     }
 
-    // 3. Construir el acordeón dinámicamente
     let acordeon = "";
 
     for (const pedido of pedidosCliente) {
-      // Traer nombre del auto
       const dataAuto = await fetch(`http://localhost:3000/api/auto/${pedido.idAuto}`).then(
         (e) => e.json(),
       );
       const auto = dataAuto.body;
 
-      // Traer estatus
       const dataEstatus = await fetch(
         `http://localhost:3000/api/pedido/cargarEstatus/${pedido.idEstatus}`,
       ).then((e) => e.json());
